@@ -24,9 +24,8 @@
 // module.exports = router;
 
 import express from 'express';
-import authMiddleware from '../Middleware/autMiddleware.js';
-import { signup, login } from '../controllers/userController.js';
-import {getUserProfile } from '../controllers/userController.js';
+import autMiddleware from '../Middleware/autMiddleware.js';
+import { signup, login,getUserProfile } from '../controllers/userController.js'
 const router = express.Router();
 
 router.post('/signup', signup);
