@@ -25,7 +25,8 @@
 
 import express from 'express';
 import autMiddleware from '../Middleware/autMiddleware.js';
-import { signup, login,getUserProfile } from '../controllers/userController.js'
+import userController from '../controllers/userController.js';
+const { signup, login, getUserProfile } = userController;
 const router = express.Router();
 
 router.post('/signup', signup);

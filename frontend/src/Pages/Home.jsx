@@ -123,12 +123,7 @@ const Home = () => {
     <Box>
       <Navbar />
       <Stack h={"100vh"} alignItems="center" justifyContent="center" direction={["column", "row"]}>
-        {!showCard && (
-          <Button colorScheme="blue" mt={4} fontSize="md" onClick={handleBookNow}>Book Now</Button>
-        )}
-        {showCard && (
           <Card amount={50} img={nmp} checkoutHandler={checkoutHandler} onClose={handleCloseCard} />
-        )}
       </Stack>
     </Box>
   );

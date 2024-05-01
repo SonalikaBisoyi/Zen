@@ -15,7 +15,7 @@ const PaymentSuccess = () => {
                 <Text>
                     Reference No.{referenceNum}
                 </Text>
-
+                <a href='/'>Back to Home</a>
             </VStack>
         </Box>
     )
