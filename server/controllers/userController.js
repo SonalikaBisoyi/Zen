@@ -148,7 +148,7 @@ const login = async (req, res) => {
 
     jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (error, token) => {
       if (error) throw error;
-      res.json({ token });
+      res.json({ token, id : user._id });
     });
   } catch (error) {
     console.error(error.message);
