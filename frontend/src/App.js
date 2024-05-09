@@ -19,11 +19,15 @@
 import React from "react";
 import AllRoutes from "./Components/AllRoutes";
 import { Box } from "@chakra-ui/react"; // Assuming you're using Chakra UI for styling
+import Navbar from './Components/Navbar.jsx';
+import Footer from './Components/Footer.jsx';
 
 const App = () => {
   return (
-      <Box mt="60px"> {/* Adjust the margin top to accommodate the height of the Navbar */}
+      <Box> {/* Adjust the margin top to accommodate the height of the Navbar */}
+        <Navbar/>
         <AllRoutes />
+        <Footer/>
     </Box>
   );
 };

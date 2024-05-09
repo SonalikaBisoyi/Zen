@@ -84,8 +84,127 @@
 
 
 
+// import React, { useState } from 'react';
+// import {useNavigate} from 'react-router-dom';
+// import axios from 'axios';
+// import {
+//   Box,
+//   FormControl,
+//   FormLabel,
+//   Input,
+//   Button,
+//   Heading,
+//   AlertDialog,
+//   AlertDialogBody,
+//   AlertDialogFooter,
+//   AlertDialogHeader,
+//   AlertDialogContent,
+//   AlertDialogOverlay,
+// } from '@chakra-ui/react';
+
+// const SignupPage = () => {
+//   const navigate = useNavigate();
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     mobileNumber: '',
+//     email: '',
+//     password: '',
+//   });
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({
+//       ...formData,
+//       [name]: value,
+//     });
+//   };
+//   const onClose = () => setIsOpen(false);
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const response = await axios.post('http://localhost:5000/api/users/signup', formData);
+//       console.log('Signup successful:', response.data);
+//       setIsOpen(true);
+//       setTimeout(() => {
+//         navigate('/login');
+//       }, 2000);
+      
+//       // Handle success - e.g., show a success message or redirect the user
+//     } catch (error) {
+//       console.error('Error:', error);
+//       // Handle error - e.g., show an error message to the user
+//     }
+//   };
+
+//   return (
+//     <Box maxW="md" mx="auto" mt={8} p={6} borderWidth="1px" borderRadius="lg">
+//       <Heading as="h1" mb={6} textAlign="center">
+//         Signup
+//       </Heading>
+//       <form onSubmit={handleSubmit}>
+//         <FormControl id="name" mb={4}>
+//           <FormLabel>Name</FormLabel>
+//           <Input
+//             type="text"
+//             name="name"
+//             value={formData.name}
+//             onChange={handleChange}
+//           />
+//         </FormControl>
+//         <FormControl id="mobileNumber" mb={4}>
+//           <FormLabel>Mobile Number</FormLabel>
+//           <Input
+//             type="tel"
+//             name="mobileNumber"
+//             value={formData.mobileNumber}
+//             onChange={handleChange}
+//           />
+//         </FormControl>
+//         <FormControl id="email" mb={4}>
+//           <FormLabel>Email address</FormLabel>
+//           <Input
+//             type="email"
+//             name="email"
+//             value={formData.email}
+//             onChange={handleChange}
+//           />
+//         </FormControl>
+//         <FormControl id="password" mb={4}>
+//           <FormLabel>Password</FormLabel>
+//           <Input
+//             type="password"
+//             name="password"
+//             value={formData.password}
+//             onChange={handleChange}
+//           />
+//         </FormControl>
+//         <Button type="submit" colorScheme="blue" width="full">
+//           Sign up
+//         </Button>
+//       </form>
+//       {/* Popup */}
+//       <AlertDialog isOpen={isOpen} onClose={onClose}>
+//         <AlertDialogOverlay>
+//           <AlertDialogContent>
+//             <AlertDialogHeader>Signup Successful</AlertDialogHeader>
+//             <AlertDialogBody>
+//               Your signup was successful. You can now log in.
+//             </AlertDialogBody>
+//             <AlertDialogFooter>
+//               <Button onClick={onClose}>Close</Button>
+//             </AlertDialogFooter>
+//           </AlertDialogContent>
+//         </AlertDialogOverlay>
+//       </AlertDialog>
+//     </Box>
+//   );
+// };
+
+// export default SignupPage;
+
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
   Box,
@@ -93,7 +212,7 @@ import {
   FormLabel,
   Input,
   Button,
-  Heading,
+  Heading,Link,
   AlertDialog,
   AlertDialogBody,
   AlertDialogFooter,
@@ -138,7 +257,7 @@ const SignupPage = () => {
   };
 
   return (
-    <Box maxW="md" mx="auto" mt={8} p={6} borderWidth="1px" borderRadius="lg">
+    <Box maxW="md" mx="auto" mt={8} p={6} borderWidth="1px" borderRadius="lg" bg="#FFE6E6" color="#7469B6">
       <Heading as="h1" mb={6} textAlign="center">
         Signup
       </Heading>
@@ -150,6 +269,7 @@ const SignupPage = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            borderColor="#AD88C6" // Input border color
           />
         </FormControl>
         <FormControl id="mobileNumber" mb={4}>
@@ -159,6 +279,7 @@ const SignupPage = () => {
             name="mobileNumber"
             value={formData.mobileNumber}
             onChange={handleChange}
+            borderColor="#AD88C6" // Input border color
           />
         </FormControl>
         <FormControl id="email" mb={4}>
@@ -168,6 +289,7 @@ const SignupPage = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            borderColor="#AD88C6" // Input border color
           />
         </FormControl>
         <FormControl id="password" mb={4}>
@@ -177,29 +299,35 @@ const SignupPage = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            borderColor="#AD88C6" // Input border color
           />
         </FormControl>
-        <Button type="submit" colorScheme="blue" width="full">
+        <Button type="submit" colorScheme="blue" width="full" bg="#AD88C6"> {/* Button color */}
           Sign up
         </Button>
       </form>
+      <Box textAlign="center">
+        <Link href="/login" color="#7469B6">No.....I want to login</Link> {/* Link color */}
+      </Box>
       {/* Popup */}
       <AlertDialog isOpen={isOpen} onClose={onClose}>
-        <AlertDialogOverlay>
-          <AlertDialogContent>
-            <AlertDialogHeader>Signup Successful</AlertDialogHeader>
-            <AlertDialogBody>
-              Your signup was successful. You can now log in.
-            </AlertDialogBody>
-            <AlertDialogFooter>
-              <Button onClick={onClose}>Close</Button>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialogOverlay>
+        <AlertDialogOverlay />
+        <AlertDialogContent bg="#E1AFD1" color="#7469B6"> {/* Alert dialog background and text color */}
+          <AlertDialogHeader>Signup Successful</AlertDialogHeader>
+          <AlertDialogBody>
+            Your signup was successful. You can now log in.
+          </AlertDialogBody>
+          <AlertDialogFooter>
+            <Button onClick={onClose} bg="#AD88C6" color="#7469B6"> {/* Button color */}
+              Close
+            </Button>
+          </AlertDialogFooter>
+        </AlertDialogContent>
       </AlertDialog>
     </Box>
   );
 };
 
 export default SignupPage;
+
 
