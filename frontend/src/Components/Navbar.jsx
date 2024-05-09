@@ -283,7 +283,7 @@ const Navbar = () => {
       <Box>
         <Box display="flex" flexDirection="column">
           <Text fontWeight="bold" fontSize="2xl" color="#AD88C6">
-            Zenpod
+            <a href="/">Zenpod</a>
           </Text>
           <Text fontSize="sm" fontWeight="normal" color="gray.500" ml={2}>
             Your workplace relaxation partner
